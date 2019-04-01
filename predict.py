@@ -55,8 +55,8 @@ def pred2(data):
 
     # TBD
     test['台中溫度'] = 26
-    test['-1尖峰負載(MW)'] = data.loc['2019-03-18', '尖峰負載(MW)']
-    test['-1台中溫度'] = data.loc['2019-03-18', '台中溫度']
+    test['-1尖峰負載(MW)'] = data.loc['2019-04-01', '尖峰負載(MW)']
+    test['-1台中溫度'] = data.loc['2019-04-01', '台中溫度']
     dtest = xgb.DMatrix(test)
     ypred = model2.predict(dtest)
 
@@ -123,10 +123,10 @@ def pred3(data):
 
     # TBD
     test['台中溫度'] = 26
-    test['-2尖峰負載(MW)'] = data.loc['2019-03-18', '尖峰負載(MW)']
-    test['-2台中溫度'] = data.loc['2019-03-18', '台中溫度']
-    test['-3尖峰負載(MW)'] = data.loc['2019-03-15', '尖峰負載(MW)']
-    test['-3台中溫度'] = data.loc['2019-03-15', '台中溫度']
+    test['-2尖峰負載(MW)'] = data.loc['2019-04-01', '尖峰負載(MW)']
+    test['-2台中溫度'] = data.loc['2019-04-01', '台中溫度']
+    test['-3尖峰負載(MW)'] = data.loc['2019-03-29', '尖峰負載(MW)']
+    test['-3台中溫度'] = data.loc['2019-03-29', '台中溫度']
     dtest = xgb.DMatrix(test)
     ypred = model3.predict(dtest)
 
@@ -199,14 +199,14 @@ def pred8(data):
 
     # TBD
     test['台中溫度'] = 26
-    test['-5尖峰負載(MW)'] = data.loc['2019-03-18', '尖峰負載(MW)']
-    test['-5台中溫度'] = data.loc['2019-03-18', '台中溫度']
-    test['-6尖峰負載(MW)'] = data.loc['2019-03-15', '尖峰負載(MW)']
-    test['-6備轉容量(MW)'] = data.loc['2019-03-15', '備轉容量(MW)']
-    test['-6台中溫度'] = data.loc['2019-03-15', '台中溫度']
-    test['-7尖峰負載(MW)'] = data.loc['2019-03-14', '尖峰負載(MW)']
-    test['-7備轉容量(MW)'] = data.loc['2019-03-14', '備轉容量(MW)']
-    test['-7台中溫度'] = data.loc['2019-03-14', '台中溫度']
+    test['-5尖峰負載(MW)'] = data.loc['2019-04-01', '尖峰負載(MW)']
+    test['-5台中溫度'] = data.loc['2019-04-01', '台中溫度']
+    test['-6尖峰負載(MW)'] = data.loc['2019-03-29', '尖峰負載(MW)']
+    test['-6備轉容量(MW)'] = data.loc['2019-03-29', '備轉容量(MW)']
+    test['-6台中溫度'] = data.loc['2019-03-29', '台中溫度']
+    test['-7尖峰負載(MW)'] = data.loc['2019-03-28', '尖峰負載(MW)']
+    test['-7備轉容量(MW)'] = data.loc['2019-03-28', '備轉容量(MW)']
+    test['-7台中溫度'] = data.loc['2019-03-28', '台中溫度']
     dtest = xgb.DMatrix(test)
     ypred = model8.predict(dtest)
 
@@ -220,7 +220,7 @@ def pred4567(data):
     from sklearn.linear_model import LinearRegression
 
     # TBD: 4/4 ~ 4/7 temparature
-    tempe = [27, 27, 27, 27]
+    tempe = [27, 27, 28, 28]
 
     for i in range(4):
     
@@ -233,6 +233,6 @@ def pred4567(data):
         #print(reg.score(X, y), reg.coef_, reg.intercept_)
 
         # TBD
-        ret.append(reg.predict([[tempe[i], (28530+28750+29140)/3]])[0])
+        ret.append(reg.predict([[tempe[i], (28535+28756+29140+30093+29673)/5]])[0])
 
     return ret
