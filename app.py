@@ -5,7 +5,7 @@ import predict
 
 # Create output dataframe
 index = pd.date_range(start='4/2/2019', periods=7, freq='D').format(formatter=lambda x: x.strftime('%Y%m%d'))
-columns = ['peakload(MW)']
+columns = ['peak_load(MW)']
 submission = pd.DataFrame(index=index, columns=columns)
 submission.index.names = ['date']
 
