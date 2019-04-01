@@ -198,7 +198,7 @@ def pred8(data):
     test = pd.DataFrame(index=index, columns=columns)
 
     # TBD
-    test['台中溫度'] = 26
+    test['台中溫度'] = 29
     test['-5尖峰負載(MW)'] = data.loc['2019-04-01', '尖峰負載(MW)']
     test['-5台中溫度'] = data.loc['2019-04-01', '台中溫度']
     test['-6尖峰負載(MW)'] = data.loc['2019-03-29', '尖峰負載(MW)']
@@ -233,6 +233,6 @@ def pred4567(data):
         #print(reg.score(X, y), reg.coef_, reg.intercept_)
 
         # TBD
-        ret.append(reg.predict([[tempe[i], (28756+29140+30093+29673+27310)/5]])[0])
+        ret.append(reg.predict([[tempe[i], (28756+29140+30093+29673+27636)/5]])[0])
 
     return ret
