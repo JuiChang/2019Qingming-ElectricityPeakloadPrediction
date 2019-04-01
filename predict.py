@@ -233,6 +233,6 @@ def pred4567(data):
         #print(reg.score(X, y), reg.coef_, reg.intercept_)
 
         # TBD
-        ret.append(reg.predict([[tempe[i], (28535+28756+29140+30093+29673)/5]])[0])
+        ret.append(reg.predict([[tempe[i], (28756+29140+30093+29673+27310)/5]])[0])
 
     return ret
