@@ -1,4 +1,4 @@
-date,peakload(MW)
+date,peak_load(MW)
 20190402,27958
 20190403,28051
 20190404,26129
